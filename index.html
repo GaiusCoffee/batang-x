@@ -25,26 +25,9 @@ layout: default
                 <div class="content content-left">
 
                   <!-- Featured Post -->
-                  <article class="box post">
-                    <header>
-                      <h3><a href="#">Here's a really big heading</a></h3>
-                      <p>With a smaller subtitle that attempts to elaborate</p>
-                      <ul class="meta">
-                        <li class="icon fa-clock-o">15 minutes ago</li>
-                        <li class="icon fa-comments"><a href="#">8</a></li>
-                      </ul>
-                    </header>
-                    <a href="#" class="image featured">
-                      <img src="http://lorempixel.com/857/248/abstract/BatangX" alt="" /></a>
-                    <p>
-                      Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-                      semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-                      dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-                      dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur
-                      accumsan.
-                    </p>
-                    <a href="#" class="button">Continue Reading</a>
-                  </article>
+                  {% assign post = site.posts.first %} 
+                  {% assign content = post.content %} 
+                  {% include feature.html %} 
 
                 </div>
               </div>
@@ -53,53 +36,19 @@ layout: default
 
                   <!-- Archives -->
                   <ul class="divided">
+                    {% for post in site.posts offset:1 limit:5 %}
                     <li>
                       <article class="box post-summary">
-                        <h3><a href="#">A Subheading</a></h3>
+                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                         <ul class="meta">
-                          <li class="icon fa-clock-o">6 hours ago</li>
-                          <li class="icon fa-comments"><a href="#">34</a></li>
+                          <li class="icon fa-clock-o">{{ post.date | date_to_long_string }}</li>
+                          <li class="icon fa-link">{{ post.subsection }}</li>
                         </ul>
                       </article>
                     </li>
-                    <li>
-                      <article class="box post-summary">
-                        <h3><a href="#">Another Subheading</a></h3>
-                        <ul class="meta">
-                          <li class="icon fa-clock-o">9 hours ago</li>
-                          <li class="icon fa-comments"><a href="#">27</a></li>
-                        </ul>
-                      </article>
-                    </li>
-                    <li>
-                      <article class="box post-summary">
-                        <h3><a href="#">And Another</a></h3>
-                        <ul class="meta">
-                          <li class="icon fa-clock-o">Yesterday</li>
-                          <li class="icon fa-comments"><a href="#">184</a></li>
-                        </ul>
-                      </article>
-                    </li>
-                    <li>
-                      <article class="box post-summary">
-                        <h3><a href="#">And Another</a></h3>
-                        <ul class="meta">
-                          <li class="icon fa-clock-o">2 days ago</li>
-                          <li class="icon fa-comments"><a href="#">286</a></li>
-                        </ul>
-                      </article>
-                    </li>
-                    <li>
-                      <article class="box post-summary">
-                        <h3><a href="#">And One More</a></h3>
-                        <ul class="meta">
-                          <li class="icon fa-clock-o">3 days ago</li>
-                          <li class="icon fa-comments"><a href="#">8,086</a></li>
-                        </ul>
-                      </article>
-                    </li>
+                    {% endfor %}
                   </ul>
-                  <a href="#" class="button alt">Browse Archives</a>
+                  <a href="{{ '/story/' | prepend: site.baseurl }}" class="button alt">Browse Archive</a>
 
                 </div>
               </div>
@@ -114,15 +63,16 @@ layout: default
 
         <!-- Features -->
         <section class="box features">
-          <h2 class="major"><span>A Major Heading</span></h2>
+          <h2 class="major"><span>Follow Multiple and Simultaneous Storylines</span></h2>
           <div>
             <div class="row">
               <div class="3u 12u(mobile)">
 
                 <!-- Feature -->
                 <section class="box feature">
-                  <a href="#" class="image featured"><img src="http://lorempixel.com/282/158/cats/BatangX" alt="" /></a>
-                  <h3><a href="#">A Subheading</a></h3>
+                  <a href="#" class="image featured">
+                    <img src="http://lorempixel.com/282/158/cats/TheBlackGuards" alt="" /></a>
+                  <h3><a href="#">The Black Guards</a></h3>
                   <p>
                     Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
                     lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
@@ -134,8 +84,9 @@ layout: default
 
                 <!-- Feature -->
                 <section class="box feature">
-                  <a href="#" class="image featured"><img src="http://lorempixel.com/282/158/abstract/BatangX" alt="" /></a>
-                  <h3><a href="#">Another Subheading</a></h3>
+                  <a href="#" class="image featured">
+                    <img src="http://lorempixel.com/282/158/cats/GabrielAndEllaine" alt="" /></a>
+                  <h3><a href="#">Gabriel &amp; Ellaine</a></h3>
                   <p>
                     Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
                     lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
@@ -147,8 +98,9 @@ layout: default
 
                 <!-- Feature -->
                 <section class="box feature">
-                  <a href="#" class="image featured"><img src="http://lorempixel.com/282/158/city/BatangX" alt="" /></a>
-                  <h3><a href="#">And Another</a></h3>
+                  <a href="#" class="image featured">
+                    <img src="http://lorempixel.com/282/158/cats/Morningstar" alt="" /></a>
+                  <h3><a href="#">Morningstar</a></h3>
                   <p>
                     Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
                     lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
@@ -160,22 +112,15 @@ layout: default
 
                 <!-- Feature -->
                 <section class="box feature">
-                  <a href="#" class="image featured"><img src="http://lorempixel.com/282/158/nature/BatangX" alt="" /></a>
-                  <h3><a href="#">And One More</a></h3>
+                  <a href="#" class="image featured">
+                    <img src="http://lorempixel.com/282/158/cats/NeoManilaTimes" alt="" /></a>
+                  <h3><a href="#">Neo Manila Times</a></h3>
                   <p>
                     Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
                     lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
                   </p>
                 </section>
 
-              </div>
-            </div>
-            <div class="row">
-              <div class="12u">
-                <ul class="actions">
-                  <li><a href="#" class="button big">Do Something</a></li>
-                  <li><a href="#" class="button alt big">Think About It</a></li>
-                </ul>
               </div>
             </div>
           </div>

@@ -1,0 +1,17 @@
+<!-- Featured Post -->
+<article class="box post">
+  <header>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p>The latest chapter in the Batang-X Universe (SPOILERS!)</p>
+    <ul class="meta">
+      <li class="icon fa-clock-o">{{ post.date | date_to_long_string }}</li>
+      <li class="icon fa-link">{{ post.subsection }}</li>
+    </ul>
+  </header>
+  <a href="{{ post.url }}" class="image featured">
+    <img src="http://lorempixel.com/857/248/city/BatangX" alt="" /></a>
+  <p>
+    {{ content | strip_html | truncatewords:70 }}
+  </p>
+  <a href="{{ post.url }}" class="button">Continue Reading</a>
+</article>
