@@ -1,0 +1,19 @@
+# Site settings
+title: Batang-X Universe
+email: gaius.coffee@gmail.com
+description: Serial Web Novel 
+baseurl: ""
+url: "http://batangx.com" 
+permalink: "/:categories/:year/:title/"
+twitter_username: GaiusCoffee
+github_username:  GaiusCoffee
+
+# Build settings
+exclude: [
+  "CNAME"
+]
+markdown: kramdown
+gems:
+- jemoji
+- jekyll-sitemap
+- jekyll-feed
