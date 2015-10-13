@@ -1251,7 +1251,7 @@ button,
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  background: #FF7878;
+  background: #C23B22;
   color: #fff;
   border: 0;
   line-height: 1em;
@@ -1270,7 +1270,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover,
 .button:hover {
-  background: #FF7878;
+  background: #C23B22;
 }
 
 input[type="button"]:active,
@@ -1278,7 +1278,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 button:active,
 .button:active {
-  background: #FF7878;
+  background: #C23B22;
 }
 
 input[type="button"].alt,
@@ -1425,7 +1425,7 @@ ul.special li:hover {
 }
 
 ul.special li:hover a {
-  background: #FF7878;
+  background: #C23B22;
 }
 
 ul.special a {
@@ -1532,7 +1532,7 @@ form input[type="email"]:focus,
 form input[type="password"]:focus,
 form select:focus,
 form textarea:focus {
-  border-color: #FF7878;
+  border-color: #C23B22;
 }
 
 form input[type="text"],
@@ -1648,7 +1648,7 @@ table.default thead {
 
 #main-wrapper {
   background: #fff;
-  border-top: solid 5px #FF7878 ;
+  border-top: solid 5px #C23B22 ;
   border-bottom: solid 5px #c1cac5;
 }
 
@@ -2000,7 +2000,7 @@ table.default thead {
   }
 
   #nav li.current a {
-    background: #FF7878;
+    background: #C23B22;
     color: #fff;
   }
 
@@ -2527,7 +2527,7 @@ table.default thead {
     position: absolute;
     left: 0;
     top: 0;
-    background: #FF7878 ;
+    background: #C23B22 ;
     width: 44px;
     height: 44px;
     content: '\f0c9';
