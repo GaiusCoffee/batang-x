@@ -1401,6 +1401,18 @@ ul.contact li:hover a.fa-google-plus {
   background-color: #DA2713;
 }
 
+ul.contact li:hover a.fa-rss-square {
+  background-color: #f26522;
+}
+
+ul.contact li:hover a.fa-github {
+  background-color: #666666;
+}
+
+ul.contact li:hover a.fa-sitemap {
+  background-color: #e0393e;
+}
+
 ul.contact li:active {
   top: 0;
 }
