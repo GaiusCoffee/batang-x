@@ -1413,6 +1413,10 @@ ul.contact li:hover a.fa-sitemap {
   background-color: #e0393e;
 }
 
+ul.contact li:hover a.fa-user-secret {
+  background-color: #000;
+}
+
 ul.contact li:active {
   top: 0;
 }
