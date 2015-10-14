@@ -12,60 +12,49 @@ layout: default
       </div>
       <div class="3u 12u(mobile)">
         <div class="sidebar">
+          
+          <!-- Something -->
+          <section>
+            <h2 class="major"><span>About this Story</span></h2>
+            <ul>
+              <li><strong>Title:</strong> {{ page.title }}</li>
+              <li class="icon fa-user">&nbsp;<strong>PoV:</strong> {{ page.pov }}</li>
+              <li class="icon fa-clock-o">&nbsp;{{ page.date | date_to_long_string }}</li>
+              <li class="icon fa-link">&nbsp;{{ page.subsection }} ({{ page.content | number_of_words }} words)</li>
+            </ul>
+            <span class="image featured"><img src="http://lorempixel.com/857/248/city/BatangX" alt="" /></span>
+          </section>
+          
+          <!-- Recent Posts -->
           <section>
             <h2 class="major"><span>Recent Posts</span></h2>
-            <ul class="divided">
-              <li>
-                <article class="box post-summary">
-                  <h3><a href="#">A Subheading</a></h3>
-                  <ul class="meta">
-                    <li class="icon fa-clock-o">6 hours ago</li>
-                    <li class="icon fa-comments"><a href="#">34</a></li>
+                  <ul class="divided">
+                    {% for post in site.posts limit:3 %}
+                    <li>
+                      <article class="box post-summary">
+                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                        <ul class="meta">
+                          <li class="icon fa-clock-o">{{ post.date | date_to_long_string }}</li>
+                          <li class="icon fa-link">{{ post.subsection }}</li>
+                        </ul>
+                      </article>
+                    </li>
+                    {% endfor %}
                   </ul>
-                </article>
-              </li>
-              <li>
-                <article class="box post-summary">
-                  <h3><a href="#">Another Subheading</a></h3>
-                  <ul class="meta">
-                    <li class="icon fa-clock-o">9 hours ago</li>
-                    <li class="icon fa-comments"><a href="#">27</a></li>
-                  </ul>
-                </article>
-              </li>
-              <li>
-                <article class="box post-summary">
-                  <h3><a href="#">And Another</a></h3>
-                  <ul class="meta">
-                    <li class="icon fa-clock-o">Yesterday</li>
-                    <li class="icon fa-comments"><a href="#">184</a></li>
-                  </ul>
-                </article>
-              </li>
-            </ul>
-            <a href="#" class="button alt">Browse Archives</a>
+                  <a href="{{ '/story/' | prepend: site.baseurl }}" class="button alt">Browse Archive</a>
           </section>
 
-          <!-- Something -->
+          <!-- Donate/Ads -->
           <section>
-            <h2 class="major"><span>Ipsum Dolore</span></h2>
-            <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-            <p>
-              Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
-              Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+            <h3 class="major"><span>Support the Author</span></h3>
+            <p style="text-align:justify;">
+              I'd be really grateful if you could whitelist my site on your adblock. If you've
+              enjoyed my work and you're willing to donate some cash, use the donate button below. 
+              If you don't have anything to spare (I understand), but you still want to help me 
+              out, then I'd really appreciate it if you'd share my work on social media.
             </p>
-            <a href="#" class="button alt">Learn more</a>
-          </section>
-
-          <!-- Something -->
-          <section>
-            <h2 class="major"><span>Magna Feugiat</span></h2>
-            <p>
-              Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-              Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
-              Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
-            </p>
-            <a href="#" class="button alt">Learn more</a>
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CX878DJJ6SKL" 
+               class="button alt" style="text-align:center;">Donate via Credit Card or PayPal</a>
           </section>
         </div>
       </div>
