@@ -92,5 +92,9 @@
 						.css('transition', 'none');
 
 	});
+  
+  $(".nmt").click(function(){
+    alert("Neo Manila Times is not a real news site.");
+  });
 
 })(jQuery);

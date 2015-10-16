@@ -1749,6 +1749,11 @@ table.default thead {
   line-height: 1em;
 }
 
+.superpowered {
+  text-decoration-line: underline; 
+  text-decoration-style: dotted;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 737px) {
